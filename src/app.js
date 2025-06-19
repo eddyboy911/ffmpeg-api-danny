@@ -26,6 +26,10 @@ app.use(compression());
 var upload = require('./routes/uploadfile.js');
 app.use(upload);
 
+//routes to stich audio/video/image files to mp3/mp4/jpg
+var stitch = require('./routes/stitch.js');
+app.use('/video', stitch);
+
 //routes to convert audio/video/image files to mp3/mp4/jpg
 var convert = require('./routes/convert.js');
 app.use('/convert', convert);
